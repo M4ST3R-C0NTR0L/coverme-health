@@ -106,3 +106,14 @@ h1, h2, h3, h4, h5, h6 {
 .cloud-shape {
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
+
+/* GPU-accelerated logo scroll */
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 20s linear infinite;
+  will-change: transform;
+}

@@ -8,42 +8,11 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center warm-gradient-mesh overflow-hidden">
-      {/* Decorative elements */}
+      {/* Decorative elements — CSS-only, no JS animation loops */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Soft cloud shapes */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-10 w-64 h-64 bg-[#0ea5e9]/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, 20, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-[#f97316]/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-40 right-1/4 w-48 h-48 bg-[#14b8a6]/10 rounded-full blur-3xl"
-        />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#0ea5e9]/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#f97316]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s', animationDuration: '8s' }} />
+        <div className="absolute top-40 right-1/4 w-48 h-48 bg-[#14b8a6]/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s', animationDuration: '7s' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">

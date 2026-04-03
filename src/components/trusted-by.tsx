@@ -16,33 +16,19 @@ export function TrustedBy() {
           Trusted by Leading Insurance Carriers
         </motion.p>
         
-        {/* Scrolling logos */}
+        {/* CSS-driven scrolling logos (GPU-accelerated) */}
         <div className="relative overflow-hidden">
-          <motion.div
-            className="flex items-center gap-8 sm:gap-12"
-            animate={{
-              x: [0, -400],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 20,
-                ease: "linear",
-              },
-            }}
-          >
+          <div className="flex items-center gap-8 sm:gap-12 animate-scroll-x">
             {[...siteConfig.carriers, ...siteConfig.carriers].map((carrier, i) => (
-              <motion.div
+              <div
                 key={`${carrier.name}-${i}`}
-                whileHover={{ scale: 1.05 }}
-                className="flex-shrink-0 w-32 h-16 sm:w-40 sm:h-20 rounded-xl flex items-center justify-center shadow-md"
+                className="flex-shrink-0 w-32 h-16 sm:w-40 sm:h-20 rounded-xl flex items-center justify-center shadow-md transition-transform duration-200 hover:scale-105"
                 style={{ backgroundColor: carrier.color }}
               >
                 <span className="text-white font-bold text-sm sm:text-base">{carrier.name}</span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
           
           {/* Gradient overlays */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f5f0eb] to-transparent pointer-events-none" />
